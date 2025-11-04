@@ -1,16 +1,35 @@
-class MenuItem:
+from menu_items import MenuItem
 
-    def __init__(self,name,price,category):
-        self.name = name
-        self.price = price
-        self.category = category
-        self.available = True
+class Menu:
 
-    def get_infos(self):
-        return f"the product:{self.name} in category: {self.category}, cost {self.price}$"
+    def __init__(self):
+        self.items = []
 
-    def set_available(self, status):
-        self.available = status
+    def add_items(self, menu_item: MenuItem):
+        self.items.append(menu_item)
 
-    def is_available(self):
-        return self.available
+    def remove_item(self, item_name):
+        for i in self.items:
+            if i.name == item_name:
+                self.items.remove(i)
+
+    def get_item_by_name(self, name):
+        for i in self.items:
+            if i.name == name:
+                return i
+            else:
+                return "not is stock"
+        return None
+
+    def get_item_by_category(self,category):
+        cat_items = []
+        for i in self.items:
+            if i.category == category:
+                cat_items.append(i)
+        return cat_items
+
+    def display_menu(self):
+        for i in self.items:
+            print(f"{i.get_infos()}")
+
+

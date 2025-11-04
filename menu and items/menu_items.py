@@ -1,12 +1,16 @@
-from menu import MenuItem
+class MenuItem:
 
+    def __init__(self,name,price,category):
+        self.name = name
+        self.price = price
+        self.category = category
+        self.available = True
 
-class Menu:
+    def get_infos(self):
+        return f"the product:{self.name} in category: {self.category}, cost {self.price}$"
 
-    def __init__(self):
-        self.items = []
+    def set_available(self, status):
+        self.available = status
 
-    def add_items(self,menu_item:MenuItem):
-        self.items.append(menu_item)
-
-    def remove_item
+    def is_available(self):
+        return self.available
