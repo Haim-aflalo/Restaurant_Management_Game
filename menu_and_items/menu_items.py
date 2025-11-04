@@ -7,7 +7,7 @@ class MenuItem:
         self.available = True
 
     def get_infos(self):
-        return f"the product:{self.name} in category: {self.category}, cost {self.price}$"
+        return f"Product: {self.name} ; Category: {self.category} ; Price {self.price}$"
 
     def set_available(self, status):
         self.available = status
