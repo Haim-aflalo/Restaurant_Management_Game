@@ -17,9 +17,7 @@ class Menu:
         for i in self.items:
             if i.name == name:
                 return i
-            else:
-                return "not is stock"
-        return None
+        return "not is stock"
 
     def get_item_by_category(self,category):
         cat_items = []

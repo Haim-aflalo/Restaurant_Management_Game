@@ -14,7 +14,7 @@ class Customer:
         if self.satisfaction - amount >= 0:
             self.satisfaction -= amount
         else:
-            self.satisfaction = 100
+            self.satisfaction = 0
 
 
     def is_happy(self):

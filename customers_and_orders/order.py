@@ -24,7 +24,7 @@ class CreateOrder:
         self.status = new_status
 
     def display_order(self):
-        print(f"Customer: {self.customer} ; Order Number: {self.order_number}")
+        print(f"Customer: {self.customer.name} ; Order Number: {self.order_number}")
         for j in self.items:
             print(j.get_infos())
         print(f"Total Price: {self.total_price} ; Status: {self.status}")

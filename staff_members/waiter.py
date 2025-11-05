@@ -1,4 +1,5 @@
 from customers_and_orders import customer
+from customers_and_orders.customer import Customer
 from customers_and_orders.order import CreateOrder
 from menu_and_items.menu import Menu
 from staff_members.staff import Staff
@@ -26,7 +27,11 @@ class Waiter(Staff):
         choice1 = input("would you like to increase or decrease satisfaction (i/d)").lower()
         if choice1 == "i":
             choice2 = int(input("how much"))
-            customer.increase_satisfaction(choice2)
+            order.customer.increase_satisfaction(choice2)
+        if choice1 == "d":
+            choice2 = int(input("how much"))
+            order.customer.increase_satisfaction(choice2)
+
 
     def receive_tip(self,amount):
         self.tips += amount
